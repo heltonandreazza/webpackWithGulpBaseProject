@@ -1,0 +1,30 @@
+{
+  "name": "base-project",
+  "version": "1.0.0",
+  "description": "base project webpack with gulp",
+  "main": "app.module.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heltonandreazza/webpackWithGulpBaseProject.git"
+  },
+  "author": "Helton Andreazza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heltonandreazza/webpackWithGulpBaseProject/issues"
+  },
+  "homepage": "https://github.com/heltonandreazza/webpackWithGulpBaseProject#readme",
+  "dependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "deep-merge": "^1.0.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "gulp": "^3.9.1",
+    "html-webpack-plugin": "^2.26.0",
+    "ng-annotate-webpack-plugin": "^0.2.1-pre",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
