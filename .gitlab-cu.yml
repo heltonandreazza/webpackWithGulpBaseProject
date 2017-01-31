@@ -1,0 +1,45 @@
+# Para a documentação conmpleta do gitlab-ci acesse: http://docs.gitlab.com/ce/ci/yaml/README.html
+
+# Tarefas que devem ser executadas antes de qualquer job
+before_script:
+  - echo 'Runner executado com sucesso...'
+  - chmod +x release.sh
+
+# Arquivos armazenados em cache, a key CI_BUILD_REF garante que o cache é válido apenas para o mesmo commit
+cache:
+  key: "$CI_BUILD_REF"
+  untracked: true
+  paths:
+    - dist/
+
+# Primeiro job definido, em estágio de build ele vai realizar a construção e geração do projeto, além de instalar as dependências
+install:
+  stage: build
+  script:
+    - npm --version
+    - npm install
+    - npm run webpack
+
+# O job runtest executará todos os testes definidos no goal npm test do package.json do projeto
+runtest:
+  stage: test
+  script:
+    - npm test
+
+# O jon runtest executará todos os testes definidos no goal npm deploy do package.json do projeto
+# Além disso irá disponibilizar os arquivos gerados no diretório dist para download, sob o nome repositório-tag
+# Esse job só é executado quando uma tag é criada no gitlab
+# Os binários (dist/) serão armazenados por 4 semanas e depois descartados. 
+# Isso é configurável e pode ser sobrescrito na própria página de Build com o botão keep
+release:
+  stage: deploy
+  script:
+    - chmod +x release.sh
+    - npm run deploy
+  artifacts:
+    paths:
+      - dist/
+    name: "$CI_BUILD_REPO-$CI_BUILD_TAG"
+    expire_in: 4 weeks
+  only:
+    - tags
