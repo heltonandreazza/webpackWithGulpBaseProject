@@ -18,7 +18,7 @@ install:
   script:
     - npm --version
     - npm install
-    - npm run webpack
+    - npm build
 
 # O job runtest executará todos os testes definidos no goal npm test do package.json do projeto
 runtest:

@@ -1,0 +1,16 @@
+{
+  "listaEmpresas": [
+    {
+      "id": 1,
+      "nomeFantasia": "Senior Sistemas" 
+    },
+    {
+      "id": 2,
+      "nomeFantasia": "Philips" 
+    },
+    {
+      "id": 3,
+      "nomeFantasia": "T-Systems" 
+    }
+  ]
+}

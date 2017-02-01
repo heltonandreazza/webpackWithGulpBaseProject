@@ -1,0 +1,14 @@
+<div ng-if="vm.confirmationType == 'warning' || !vm.confirmationType" class="modal-header modal-warning">ALERTA</div>
+<div ng-if="vm.confirmationType == 'info'" class="modal-header modal-info">INFO</div>
+<div ng-if="vm.confirmationType == 'blank'" class="modal-header">{{vm.title}}</div>
+<div class="modal-body">
+    {{ vm.message }}
+    <div class="form-group" ng-if="vm.showInput == 'true'">
+        <label>{{ vm.inputLabel }}</label>
+        <input type="text" class="form-control" ng-model="vm.inputModel" autofocus>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="vm.ok()">Continuar</button>
+    <a ng-if="vm.confirmationType != 'info'" class="btn btn-link" ng-click="vm.cancel()">Cancelar</a>
+</div>
