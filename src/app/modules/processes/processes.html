@@ -1,0 +1,66 @@
+<div class="page-container ng-scope">
+  <div class="page-content-wrapper">
+    <div class="page-content">
+      <div id="page-head" class="page-head ng-scope" style="padding-right: 15px">
+        <div class="page-title">
+          <h1>Processos de conciliação bancária</h1>
+        </div>
+      </div>
+      <!-- Bread crumb -->
+      <ul class="page-breadcrumb breadcrumb">
+        <li>
+          <a ng-href="{{ vm.url.PLATFORM }}" target="_parent">Home</a>
+          <i class="fa fa-circle"></i>
+        </li>
+        <li>
+          <span class="active">Processos de conciliação bancária</span>
+        </li>
+      </ul>
+      <div class="portlet light bordered">
+        <div class="portlet-title">
+          <div class="caption">
+            <span class="caption-subject font-green font-dark bold uppercase ng-binding">PROCESSOS</span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="box">
+              <div class="box-content card-bgc">
+                <h4 class="block card-title">CONCILIAÇÃO</h4>
+                <p class="card-text">Realize a conferência das contas bancárias com o controle financeiro interno. Verificando se está tudo correto no controle interno ou se há inconsistências de dados.</p>
+                <div align="center" class="padding-top-10">
+                  <button class="btn btn-primary" ng-click="vm.conciliar()">Conciliar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="box">
+              <div class="box-content card-bgc">
+                <h4 class="block card-title">DESCONCILIAÇÃO</h4>
+                <p class="card-text">Faça a conferência das conciliações realizadas, para desfazê-las em caso de erros, permitindo a correção.</p>
+                <div align="center" class="padding-top-10">
+                  <button class="btn btn-primary" ng-click="vm.desconciliar()">Desconciliar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="box">
+              <div class="box-content card-bgc">
+                <h4 class="block card-title">APURAÇÃO CONSOLIDADA</h4>
+                <p class="card-text">Veja de forma prática a situação atual das conciliações. Se for necessário, você pode avançar nos detalhes de cada item.</p>
+                <div align="center" class="padding-top-10">
+                  <button class="btn btn-primary" ng-click="vm.apurar()">Apurar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
